@@ -1,0 +1,56 @@
+
+.drawer-closed{
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background-color: white;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transition: 0.5s;
+    display: flex;
+}
+.drawer-open{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 75%;
+    background-color: white;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transition: 0.5s;
+}
+
+#drawer-navigator-dim{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.dim-null{
+    animation: widthOut;
+    animation-duration: 1s;
+    width: 0;
+}
+.dim-active{
+    animation: opacityFadeIn;
+    animation-duration: 0.5s;
+    width: 100%;
+}
+@keyframes widthOut {
+    0%{opacity: 1}
+    50%{opacity: 0; }
+    100%{width: 0}
+}
+@keyframes opacityFadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

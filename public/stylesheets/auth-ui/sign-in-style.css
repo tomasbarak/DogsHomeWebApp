@@ -71,7 +71,7 @@ textarea:focus, input:focus{
     text-decoration: none;
     margin-bottom: 8px;
 }
-@font-face{font-family: 'libel-suit-rg'; src: url(../fonts/libel-suit.otf) format('opentype');}
+@font-face{font-family: 'libel-suit-rg'; src: url(../../fonts/libel-suit.otf) format('opentype');}
 #sign-in-title{
     font-family: libel-suit-rg, sans-serif;
     font-size: 3em;

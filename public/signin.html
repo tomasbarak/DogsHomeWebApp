@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>DogsHome</title>
-  <link href="stylesheets/sign-in-style.css" rel="stylesheet">
+  <link href="stylesheets/auth-ui/sign-in-style.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="images/DogsHomeLogo-ReDesign%20(Colorified&Final).png">
@@ -45,11 +45,19 @@
 
 <script src="https://dogshome.softvisiondevelop.com.ar/__/firebase/init.js"></script>
 
-<script src="scripts/sign-in.js"></script>
+<script src="scripts/auth/sign-in.js"></script>
 <script>
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      window.location.href = "index.html";
+
+      var location = window.location.href;
+
+      if(location.includes("localhost")){
+        window.location.href = "index.html";
+      }else{
+        window.location.href = "/";
+      }
+
       var uid = user.uid;
       // ...
     } else {
