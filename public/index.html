@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignedIn</title>
+    <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link href="stylesheets/style-mainpage.css" rel="stylesheet">
+
+
+</head>
+<body onload="setLoading(true)">
+<script src="scripts/loading-display.js"></script>
+<div id="loading-visible">
+    <lottie-player src="animations/dog-walking.json" background="transparent"  speed="1"  style="width: 200px; height: 200px;" loop autoplay></lottie-player>
+</div>
+
+<button onclick="signOut()">cerrar sesion</button>
+
+<!--Firebase Scripts -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://dogshome.softvisiondevelop.com.ar/__/firebase/8.6.5/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://dogshome.softvisiondevelop.com.ar/__/firebase/8.6.5/firebase-auth.js"></script>
+<script src="https://dogshome.softvisiondevelop.com.ar/__/firebase/8.6.5/firebase-firestore.js"></script>
+<script src="https://dogshome.softvisiondevelop.com.ar/__/firebase/init.js"></script>
+
+<script src="scripts/sign-out.js"></script>
+
+<script>
+    function load(){
+    $( document ).ready(function() {
+        console.log( 'testing..' );
+        var user = firebase.auth().currentUser;
+        console.log(user);
+    });
+    }
+</script>
+<script>
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            var uid = user.uid;
+            // ...
+        } else {
+            window.location.href = "signin.html";
+            // ...
+        }
+    });
+</script>
+</body>
+</html>
