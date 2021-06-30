@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 </head>
 <body onload="setLoading(true)">
 <script src="scripts/auth/loading-display.js"></script>
@@ -35,8 +36,8 @@
     <div id="search-bar">
         <span class="material-icons-outlined" id="menu-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none" onclick="drawerAction()">menu</span>
 
-        <a id="alerts-button" class="desktop-elements nav-buttons" style="" onclick="navigateToAlerts()">Alertas</a>
-        <a id="refugios-button" class="desktop-elements nav-buttons" style="" onclick="navigateToRefs()">Refugios</a>
+        <a id="alerts-button" class="desktop-elements nav-buttons" onclick="navigateToAlerts()">Alertas</a>
+        <a id="refugios-button" class="desktop-elements nav-buttons" onclick="navigateToRefs()">Refugios</a>
 
         <div class="" id="separatorLeft" style="flex: 1; align-items: flex-start; justify-content: flex-end; user-select: none">
         </div>
@@ -49,6 +50,7 @@
         <div class="" id="userSpace" style="flex: 1; align-items: flex-start; justify-content: flex-end">
         </div>
         <span class="material-icons-outlined" id="fav-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none" onclick="navigateToFav()">favorite_border</span>
+        <a class="desktop-elements nav-buttons" onclick="navigateToProfile">Mi perfil</a>
         <img class="desktop-elements" src="https://www.uic.mx/posgrados/files/2018/05/default-user.png" alt="profile pic" style="height: 40px; width: 40px; cursor: pointer; margin-left: 10px; user-select: none">
     </div>
 </section>
