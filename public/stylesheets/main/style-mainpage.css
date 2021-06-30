@@ -6,6 +6,7 @@ html, body {
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #loading-visible{
@@ -75,6 +76,25 @@ html, body {
 #menu-button, #fav-button{
     display: none;
 }
+.desktop-elements{
+    display: flex;
+}
+
+.nav-buttons{
+    user-select: none;
+    cursor: pointer;
+    color: white;
+    font-size: 12pt;
+    transform: scale(1);
+    transform-origin: center;
+    transition: 0.15s;
+    margin: 0 10px;
+}
+.nav-buttons:hover{
+    transition: 0.15s;
+    transform: scale(1.1);
+}
+
 @media screen and (max-width: 1024px){
     #search-input, #search-input-container, #search-form{
         height: 100%;

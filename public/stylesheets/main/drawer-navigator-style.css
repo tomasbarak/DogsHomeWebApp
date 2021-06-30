@@ -37,18 +37,18 @@
 }
 .dim-null{
     animation: widthOut;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     width: 0;
 }
 .dim-active{
     animation: opacityFadeIn;
-    animation-duration: 0.5s;
+    animation-duration: 0.25s;
     width: 100%;
 }
 @keyframes widthOut {
-    0%{opacity: 1}
-    50%{opacity: 0; }
-    100%{width: 0}
+    0%{opacity: 1; width: 100%}
+    50%{opacity: 0;width: 100%;}
+    100%{opacity: 0; width: 0}
 }
 @keyframes opacityFadeIn {
     from {opacity: 0;}
