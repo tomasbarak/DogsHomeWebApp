@@ -30,6 +30,7 @@
 
 #drawer-navigator-dim{
     position: absolute;
+    z-index: 99;
     top: 0;
     left: 0;
     height: 100%;
