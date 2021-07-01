@@ -10,7 +10,7 @@
     top: 0;
     left: 0;
     z-index: 99;
-    transition: 0.5s;
+    transition: 0.25s;
     display: flex;
 }
 .drawer-open{
@@ -25,7 +25,7 @@
     top: 0;
     left: 0;
     z-index: 99;
-    transition: 0.5s;
+    transition: 0.25s;
 }
 
 #drawer-navigator-dim{
@@ -38,12 +38,12 @@
 }
 .dim-null{
     animation: widthOut;
-    animation-duration: 0.5s;
+    animation-duration: 0.25s;
     width: 0;
 }
 .dim-active{
     animation: opacityFadeIn;
-    animation-duration: 0.25s;
+    animation-duration: 0.125s;
     width: 100%;
 }
 @keyframes widthOut {

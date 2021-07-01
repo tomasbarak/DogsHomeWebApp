@@ -7,6 +7,7 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="scripts/main/basic-navigation.js"></script>
     <link href="stylesheets/main/style-mainpage.css" rel="stylesheet">
+    <link href="stylesheets/main/content-show.css" rel="stylesheet">
     <link href="stylesheets/main/drawer-navigator-style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="icon" href="images/DogsHomeLogo-ReDesign%20(Colorified&Final).png">
@@ -28,9 +29,7 @@
         <section id="drawer-navigator" class="drawer-closed" style="z-index: 100">
 
         </section>
-        <section onclick="drawerAction()" style="width: 25%; height: 100%; position: absolute; top: 0; right: 0">
-
-        </section>
+        <section onclick="drawerAction()" style="width: 25%; height: 100%; position: absolute; top: 0; right: 0"></section>
     </section>
 
     <div id="search-bar">
@@ -50,9 +49,18 @@
         <div class="" id="userSpace" style="flex: 1; align-items: flex-start; justify-content: flex-end">
         </div>
         <span class="material-icons-outlined" id="fav-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none" onclick="navigateToFav()">favorite_border</span>
-        <a class="desktop-elements nav-buttons" style="margin-right: 0; padding-right: 10px" onclick="navigateToProfile">Mi perfil</a>
+        <a class="desktop-elements nav-buttons" id="profile-name" style="margin-right: 0; padding-right: 10px" onclick="navigateToProfile">-</a>
         <img class="desktop-elements" id="profile-pic" src="https://www.uic.mx/posgrados/files/2018/05/default-user.png" alt="profile pic" style="height: 40px; width: 40px; cursor: pointer; margin-right: 10px; user-select: none; border-radius: 80px; object-fit: cover">
     </div>
+    <section id="content">
+        <section id="content-show">
+            <!--<div class="publication">
+                <img src="https://res.cloudinary.com/dogshome/image/upload/v1625108682/hji4aeftmk2rp0zdpzye.jpg" alt="perroFoto" class="publication-photo">
+                <h1 class="publication-name">Pupi</h1>
+                <p class="publication-description">Pupi es un perro muy simpático, muy buena onda, buen cachorro. Con las otras mascotas se lleva bien, y con los chicos también. Pupi quiere estar en una casa.</p>
+            </div>-->
+        </section>
+    </section>
 </section>
 
 <!--Firebase Scripts -->
@@ -69,15 +77,21 @@
 
 <script src="scripts/auth/sign-out.js"></script>
 <script src="scripts/main/open-close-drawer.js"></script>
-<script src="scripts/main/read-database.js"></script>
+<script src="scripts/main/get-all-publications.js"></script>
+<script src="scripts/main/add-publication.js"></script>
+<script src="scripts/profile/profile-settings-functions.js"></script>
 
 <script>
     function load(){
     $( document ).ready(function() {
-        var userEmail = firebase.auth().currentUser.email;
-        console.log('logged as '+userEmail.replace('.', ':'));
-        readUserImage(userEmail);
-
+        if(firebase.auth().currentUser.emailVerified === true){
+            var userEmail = firebase.auth().currentUser.email;
+            //console.log('logged as '+userEmail.replace('.', ':'));
+            readUserData(userEmail);
+            getPublications();
+        }else{
+            window.location = "verification.html";
+        }
     });
     }
 </script>
