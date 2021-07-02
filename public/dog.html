@@ -8,6 +8,7 @@
     <link href="stylesheets/publications/publications-style.css" rel="stylesheet">
     <link href="stylesheets/publications/slider.css" rel="stylesheet">
     <link href="stylesheets/main/style-mainpage.css" rel="stylesheet">
+    <link href="stylesheets/main/drawer-navigator-style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="scripts/publications/get-query.js"></script>
     <script src="scripts/profile/profile-settings-functions.js"></script>
@@ -16,6 +17,7 @@
     <script src="scripts/publications/select-secondary-photo.js"></script>
     <script src="scripts/publications/images-swipe-functions.js"></script>
     <script src="scripts/publications/create-slider.js"></script>
+    <script src="scripts/main/open-close-drawer.js"></script>
     <script src="scripts/main/basic-navigation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +29,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Prompt&display=swap" rel="stylesheet">
 </head>
 <body onload="{getQuery(window.location.href); readUserData('barakcinthia@gmail.com')}">
+    <section id="drawer-navigator-dim" class="dim-null">
+            <section id="drawer-navigator" class="drawer-closed" style="z-index: 100">
+
+            </section>
+        <section onclick="drawerAction()" style="width: 25%; height: 100%; position: absolute; top: 0; right: 0"></section>
+    </section>
     <div id="top-bar">
         <span class="material-icons-outlined" id="menu-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none" onclick="drawerAction()">menu</span>
 
