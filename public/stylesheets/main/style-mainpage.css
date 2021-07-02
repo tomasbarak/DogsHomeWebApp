@@ -98,6 +98,25 @@ html, body {
 
 @media screen and (max-width: 1023px){
     #search-input, #search-input-container, #search-form{
+        max-width: 400px;
+    }
+    #search-form{
+        padding: 0;
+    }
+    #search-input-container{
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    #menu-button, #fav-button{
+        display: flex;
+    }
+    .desktop-elements{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px){
+    #search-input, #search-input-container, #search-form{
         height: 100%;
         flex: 1;
         max-width: 250px;
@@ -112,11 +131,5 @@ html, body {
     #search-input-container{
         padding: 0 10px;
         box-sizing: border-box;
-    }
-    #menu-button, #fav-button{
-        display: flex;
-    }
-    .desktop-elements{
-        display: none;
     }
 }

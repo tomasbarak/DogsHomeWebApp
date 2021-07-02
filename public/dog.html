@@ -2,14 +2,58 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Publicacion</title>
+    <title>DogsHome | Publicacion</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="icon" href="images/DogsHomeLogo-ReDesign%20(Colorified&Final).png">
     <link href="stylesheets/publications/publications-style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="scripts/publications/get-query.js"></script>
+    <script src="scripts/publications/get-publication.js"></script>
+    <script src="scripts/publications/add-secondary-photos.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 </head>
 <body onload="getQuery(window.location.href)">
-    <section id="post">
+    <div id="top-bar">
+        <form id="search-form">
+            <div id="search-input-container" style="width: 100%; height: 100%; max-width: 600px; flex-direction: row; display: flex; align-items: center; justify-content: center; background-color: white; box-sizing: border-box">
+                <input type="text" id="search-input" aria-label="Buscar" placeholder="Buscar en DogsHome…" maxlength="120" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" tabindex="3">
+                <span class="material-icons-outlined" style="color: #d3d3d3; cursor: pointer; user-select: none" onclick="searchPost()">search</span>
+            </div>
+        </form>
+    </div>
+    <div id="all-container">
+        <div id="post">
+            <div style="flex-direction: row; display: flex; width: 100%; height: 100%">
+                <div id="post-images-selector">
+                    <div class="secondary-image-cont">
+                        <img src="" alt class="secondary-image" id="primary-image-min">
+                    </div>
+                </div>
+                <div id="left-post">
+                    <div id="post-image-container">
+                        <img id="post-image" src="" alt>
+                    </div>
+                </div>
+            </div>
 
-    </section>
+            <div id="right-post">
+                <div style="border-radius: 25px; border-width: 1px; border-color: #888888">
+                    <a id="post-name"></a>
+                    <p id="post-desc"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://dogshome.softvisiondevelop.com.ar/__/firebase/8.6.5/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://dogshome.softvisiondevelop.com.ar/__/firebase/8.6.5/firebase-auth.js"></script>
+    <script src="https://dogshome.softvisiondevelop.com.ar/__/firebase/8.6.5/firebase-database.js"></script>
+    <script src="https://dogshome.softvisiondevelop.com.ar/__/firebase/init.js"></script>
 </body>
 </html>

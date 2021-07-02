@@ -26,4 +26,5 @@ function addPublications(allPublications){
         var publicationDesc = publicationContainer.appendChild(publicationCreatedDesc);
 
     }
+    setLoading(false)
 }
