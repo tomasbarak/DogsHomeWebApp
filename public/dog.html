@@ -6,36 +6,72 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <link rel="icon" href="images/DogsHomeLogo-ReDesign%20(Colorified&Final).png">
     <link href="stylesheets/publications/publications-style.css" rel="stylesheet">
+    <link href="stylesheets/publications/slider.css" rel="stylesheet">
+    <link href="stylesheets/main/style-mainpage.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="scripts/publications/get-query.js"></script>
+    <script src="scripts/profile/profile-settings-functions.js"></script>
     <script src="scripts/publications/get-publication.js"></script>
     <script src="scripts/publications/add-secondary-photos.js"></script>
+    <script src="scripts/publications/select-secondary-photo.js"></script>
+    <script src="scripts/publications/images-swipe-functions.js"></script>
+    <script src="scripts/publications/create-slider.js"></script>
+    <script src="scripts/main/basic-navigation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Prompt&display=swap" rel="stylesheet">
 </head>
-<body onload="getQuery(window.location.href)">
+<body onload="{getQuery(window.location.href); readUserData('barakcinthia@gmail.com')}">
     <div id="top-bar">
+        <span class="material-icons-outlined" id="menu-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none" onclick="drawerAction()">menu</span>
+
+        <a id="alerts-button" class="desktop-elements nav-buttons" onclick="navigateToAlerts()">Alertas</a>
+        <a id="refugios-button" class="desktop-elements nav-buttons" onclick="navigateToRefs()">Refugios</a>
+
+        <div class="" id="separatorLeft" style="flex: 1; align-items: flex-start; justify-content: flex-end; user-select: none">
+        </div>
         <form id="search-form">
-            <div id="search-input-container" style="width: 100%; height: 100%; max-width: 600px; flex-direction: row; display: flex; align-items: center; justify-content: center; background-color: white; box-sizing: border-box">
+            <div id="search-input-container" style="width: 100%; height: 100%; max-width: 600px; flex-direction: row; display: flex; align-items: center; justify-content: center; background-color: white">
                 <input type="text" id="search-input" aria-label="Buscar" placeholder="Buscar en DogsHome…" maxlength="120" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" tabindex="3">
                 <span class="material-icons-outlined" style="color: #d3d3d3; cursor: pointer; user-select: none" onclick="searchPost()">search</span>
             </div>
         </form>
+        <div class="" id="userSpace" style="flex: 1; align-items: flex-start; justify-content: flex-end">
+        </div>
+        <span class="material-icons-outlined" id="fav-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none" onclick="navigateToFav()">favorite_border</span>
+        <a class="desktop-elements nav-buttons" id="profile-name" style="margin-right: 0; padding-right: 10px" onclick="navigateToProfile">-</a>
+        <img class="desktop-elements" id="profile-pic" src="https://www.uic.mx/posgrados/files/2018/05/default-user.png" alt="profile pic" style="height: 40px; width: 40px; cursor: pointer; margin-right: 10px; user-select: none; border-radius: 80px; object-fit: cover">
+
     </div>
     <div id="all-container">
         <div id="post">
             <div style="flex-direction: row; display: flex; width: 100%; height: 100%">
                 <div id="post-images-selector">
-                    <div class="secondary-image-cont">
+                    <div class="secondary-image-cont-unselected" id="primary-image-cont-min" onclick="onSecondaryImageClick(this.id)">
                         <img src="" alt class="secondary-image" id="primary-image-min">
                     </div>
                 </div>
                 <div id="left-post">
                     <div id="post-image-container">
                         <img id="post-image" src="" alt>
+                        <div id="image-count">
+                            <a>1/2</a>
+                        </div>
+                        <!--Creates the slider-->
+                        <div class="slider-wrap" style="width: 100%; margin: 0; padding: 0; height: 100%">
+                            <div class="slider" id="slider">
+                                <!--Creates the holder-->
+                                <div class="holder">
+
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -55,5 +91,8 @@
     <script src="https://dogshome.softvisiondevelop.com.ar/__/firebase/8.6.5/firebase-auth.js"></script>
     <script src="https://dogshome.softvisiondevelop.com.ar/__/firebase/8.6.5/firebase-database.js"></script>
     <script src="https://dogshome.softvisiondevelop.com.ar/__/firebase/init.js"></script>
+
+    <script src="scripts/publications/slider.js"></script>
+
 </body>
 </html>

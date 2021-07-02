@@ -12,6 +12,7 @@ function getPublication(id){
             document.title = "DogsHome | " + data.Name;
 
             addSecondaryPhotos(data.Images);
+            createSlider(data.Images, data.Photo);
         } else {
             console.log("No data available");
         }
