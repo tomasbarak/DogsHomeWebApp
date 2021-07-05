@@ -82,7 +82,7 @@ if (navigator.msMaxTouchPoints) {
             // Calculate the distance swiped.
             var absMove = Math.abs(this.index*this.slideWidth - this.movex);
             // Calculate the index. All other calculations are based on the index.
-            if (absMove > this.slideWidth/2) {
+            if (absMove > this.slideWidth/6) {
                 if (this.movex > this.index*this.slideWidth && this.index < sliderLength) {
                     this.index++;
                     console.log("Siguiente xd" + sliderLength);

@@ -10,6 +10,7 @@ function addPublications(allPublications){
 
         var publicationCreatedImage = document.createElement('img');
         publicationCreatedImage.className = 'publication-photo';
+        publicationCreatedImage.loading = 'lazy';
         publicationCreatedImage.src = allPublications[key].Photo;
 
         var publicationImage = publicationContainer.appendChild(publicationCreatedImage);
