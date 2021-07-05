@@ -38,7 +38,7 @@
 }
 
 .holder {
-    width: 300%;
+    width: 400vw;
     height: 40vh;
     overflow-y: hidden;
 }
@@ -109,6 +109,9 @@
     width: 100vw;
     height: 40vh;
     object-fit: contain;
+}
+.slider{
+    width: 100vw;
 }
 @media screen and (max-width: 1184px){
     .slider-wrap{

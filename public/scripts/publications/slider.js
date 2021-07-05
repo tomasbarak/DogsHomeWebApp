@@ -1,3 +1,4 @@
+
 if (navigator.msMaxTouchPoints) {
 
     $('#slider').addClass('ms-touch');
@@ -58,13 +59,15 @@ if (navigator.msMaxTouchPoints) {
         },
 
         move: function(event) {
+            var sliderLength = document.getElementsByClassName("slide-wrapper").length - 1;
+
             // Continuously return touch position.
             this.touchmovex =  event.originalEvent.touches[0].pageX;
             // Calculate distance to translate holder.
             this.movex = this.index*this.slideWidth + (this.touchstartx - this.touchmovex);
             // Defines the speed the images should move at.
             var panx = 100-this.movex/6;
-            if (this.movex < document.body.clientWidth*2) { // Makes the holder stop moving when there is no more content.
+            if (this.movex < document.body.clientWidth * sliderLength) { // Makes the holder stop moving when there is no more content.
                 this.el.holder.css('transform','translate3d(-' + this.movex + 'px,0,0)');
             }
             if (panx < 100) { // Corrects an edge-case problem where the background image moves without the container moving.
@@ -73,23 +76,27 @@ if (navigator.msMaxTouchPoints) {
         },
 
         end: function(event) {
+            var sliderLength = document.getElementsByClassName("slide-wrapper").length - 1;
+
             var sliderCountElementText = document.getElementById("image-count-number");
             // Calculate the distance swiped.
             var absMove = Math.abs(this.index*this.slideWidth - this.movex);
             // Calculate the index. All other calculations are based on the index.
-            if (absMove > this.slideWidth/2 || this.longTouch === false) {
-                if (this.movex > this.index*this.slideWidth && this.index < 2) {
+            if (absMove > this.slideWidth/2) {
+                if (this.movex > this.index*this.slideWidth && this.index < sliderLength) {
                     this.index++;
-                    console.log("Siguiente xd");
+                    console.log("Siguiente xd" + sliderLength);
 
                     sliderCountElementText.innerText = (this.index + 1) + "/" + (sliderCountElementText.innerText).substring((sliderCountElementText.innerText).indexOf("/")+1, sliderCountElementText.innerText.length);
 
                 } else if (this.movex < this.index*this.slideWidth && this.index > 0) {
+                    console.log("sos un pelotudo <<");
                     this.index--;
                     sliderCountElementText.innerText = (this.index + 1) + "/" + (sliderCountElementText.innerText).substring((sliderCountElementText.innerText).indexOf("/")+1, sliderCountElementText.innerText.length);
 
                 }
             }
+            console.log(this.index);
             // Move and animate the elements.
             this.el.holder.addClass('animate').css('transform', 'translate3d(-' + this.index*this.slideWidth + 'px,0,0)');
             this.el.imgSlide.addClass('animate').css('transform', 'translate3d(-' + 100-this.index*50 + 'px,0,0)');
