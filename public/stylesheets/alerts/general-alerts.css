@@ -11,3 +11,16 @@ html, body {
     margin: 0 !important;
     padding: 0 !important;
 }
+.alertCont{
+    position: relative;
+    height: 100%;
+    width: 51px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.alertImage{
+    width: 100%;
+    height: auto;
+}

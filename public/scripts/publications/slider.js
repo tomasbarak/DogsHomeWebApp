@@ -73,14 +73,21 @@ if (navigator.msMaxTouchPoints) {
         },
 
         end: function(event) {
+            var sliderCountElementText = document.getElementById("image-count-number");
             // Calculate the distance swiped.
             var absMove = Math.abs(this.index*this.slideWidth - this.movex);
             // Calculate the index. All other calculations are based on the index.
             if (absMove > this.slideWidth/2 || this.longTouch === false) {
                 if (this.movex > this.index*this.slideWidth && this.index < 2) {
                     this.index++;
+                    console.log("Siguiente xd");
+
+                    sliderCountElementText.innerText = (this.index + 1) + "/" + (sliderCountElementText.innerText).substring((sliderCountElementText.innerText).indexOf("/")+1, sliderCountElementText.innerText.length);
+
                 } else if (this.movex < this.index*this.slideWidth && this.index > 0) {
                     this.index--;
+                    sliderCountElementText.innerText = (this.index + 1) + "/" + (sliderCountElementText.innerText).substring((sliderCountElementText.innerText).indexOf("/")+1, sliderCountElementText.innerText.length);
+
                 }
             }
             // Move and animate the elements.

@@ -18,9 +18,5 @@ function loadMap(lat, lon){
         accessToken: 'your.mapbox.access.token'
     }).addTo(mymap);
 
-    var marker1 = L.marker([lat-0.01, lon+0.01]).addTo(mymap);
-    marker1.bindPopup("<div style='position: relative; height: 100%; width: 51px; display: flex; align-items: center; justify-content: flex-start; flex-direction: column'><img src='https://res.cloudinary.com/dogshome/image/upload/v1625108682/hji4aeftmk2rp0zdpzye.jpg' alt='logo' style='width: 100%; height: auto'><a style='color: black; font-size: 8pt'>Pupi</a></div>").openPopup();
-
-    var marker2 = L.marker([lat, lon]).addTo(mymap);
-    marker2.bindPopup("<div style='position: relative; height: 100%; width: 51px; display: flex; align-items: center; justify-content: flex-start; flex-direction: column'><img src='https://www.mibelgrano.com.ar/wp-content/uploads/2018/12/perro-perdido.jpg' alt='logo' style='width: 100%; height: auto'><a style='color: black; font-size: 8pt'>Puré</a></div>").openPopup();
+    get_all_alerts(mymap);
 }

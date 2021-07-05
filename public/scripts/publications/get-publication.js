@@ -10,7 +10,9 @@ function getPublication(id){
             document.getElementById("post-name").innerText = data.Name;
             document.getElementById("post-desc").innerText = data.SDescription;
             document.title = "DogsHome | " + data.Name;
+            console.log("Cant images " + data.Images.length);
 
+            document.getElementById("image-count-number").innerText = "1/" + (data.Images.length + 1);
             addSecondaryPhotos(data.Images);
             createSlider(data.Images, data.Photo);
         } else {

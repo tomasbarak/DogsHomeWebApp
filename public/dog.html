@@ -36,6 +36,8 @@
         <section onclick="drawerAction()" style="width: 25%; height: 100%; position: absolute; top: 0; right: 0"></section>
     </section>
     <div id="top-bar">
+        <img src="images/DogsHomeLogo-ReDesign%20(White&Final).png" alt style="cursor: pointer; height: 50px; width: 50px" class="desktop-elements" onclick="window.location = 'index.html'">
+
         <span class="material-icons-outlined" id="menu-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none" onclick="drawerAction()">menu</span>
 
         <a id="alerts-button" class="desktop-elements nav-buttons" onclick="navigateToAlerts()">Alertas</a>
@@ -53,7 +55,7 @@
         </div>
         <span class="material-icons-outlined" id="fav-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none" onclick="navigateToFav()">favorite_border</span>
         <a class="desktop-elements nav-buttons" id="profile-name" style="margin-right: 0; padding-right: 10px" onclick="navigateToProfile">-</a>
-        <img class="desktop-elements" id="profile-pic" src="https://www.uic.mx/posgrados/files/2018/05/default-user.png" alt="profile pic" style="height: 40px; width: 40px; cursor: pointer; margin-right: 10px; user-select: none; border-radius: 80px; object-fit: cover">
+        <img class="desktop-elements" id="profile-pic" src="animations/image-loading.gif" alt="profile pic" style="height: 40px; width: 40px; cursor: pointer; margin-right: 10px; user-select: none; border-radius: 80px; object-fit: cover">
 
     </div>
     <div id="all-container">
@@ -68,7 +70,7 @@
                     <div id="post-image-container">
                         <img id="post-image" src="" alt>
                         <div id="image-count">
-                            <a>1/2</a>
+                            <a id="image-count-number">1/2</a>
                         </div>
                         <!--Creates the slider-->
                         <div class="slider-wrap" style="width: 100%; margin: 0; padding: 0; height: 100%">

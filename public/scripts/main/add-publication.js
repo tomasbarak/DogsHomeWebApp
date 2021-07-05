@@ -4,6 +4,7 @@ function addPublications(allPublications){
         var publicationCreatedContainer = document.createElement('div');
         publicationCreatedContainer.className = 'publication';
         publicationCreatedContainer.onclick = function (){window.location = "dog.html" + '?publication=' + allPublications[key].Id};
+        //publicationCreatedContainer.style.height = (Math.random() * (330 - 270 + 1) + 270) + "px";
 
         var publicationContainer = document.getElementById("content-show").appendChild(publicationCreatedContainer);
 
