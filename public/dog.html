@@ -110,6 +110,19 @@
 
     <script src="scripts/publications/slider.js"></script>
 
+    <script>
+        var userDataName = localStorage.getItem('userDataName');
+        var userDataSurname = localStorage.getItem('userDataSurname');
+        var userDataImage = localStorage.getItem('userDataImage');
+
+        if(userDataImage !== null){
+            document.getElementById('profile-pic').src = userDataImage;
+        }
+        if(userDataSurname !== null && userDataName !== null){
+            document.getElementById('profile-name').innerText = userDataName + ' ' + userDataSurname;
+        }
+    </script>
+
    <!-- <script>
         var gesture = {
                 x: [],
