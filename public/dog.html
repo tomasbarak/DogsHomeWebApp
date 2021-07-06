@@ -25,6 +25,8 @@
     <script src="scripts/publications/create-slider.js"></script>
     <script src="scripts/main/open-close-drawer.js"></script>
     <script src="scripts/main/basic-navigation.js"></script>
+    <script src="scripts/publications/expand-menu.js"></script>
+    <script src="scripts/publications/throw-error.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,22 +37,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Prompt&display=swap" rel="stylesheet">
 </head>
 <body onload="{getQuery(window.location.href); readUserData('barakcinthia@gmail.com')}">
-    <section id="drawer-navigator-dim" class="dim-null">
-            <section id="drawer-navigator" class="drawer-closed" style="z-index: 100">
 
-            </section>
-        <section onclick="drawerAction()" style="width: 25%; height: 100%; position: absolute; top: 0; right: 0"></section>
-    </section>
     <div id="top-bar">
-        <img src="images/DogsHomeLogo-ReDesign%20(White&Final).png" alt style="cursor: pointer; height: 50px; width: 50px" class="desktop-elements" onclick="window.location = 'index.html'">
-
-        <span class="material-icons-outlined" id="menu-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none" onclick="drawerAction()">menu</span>
+        <img src="images/DogsHomeLogo-ReDesign%20(White&Final).png" alt style="cursor: pointer; height: 50px; width: 50px; margin-left: 10px" class="desktop-elements" onclick="window.location = 'index.html'">
+        <span class="material-icons-outlined" id="menu-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none" onclick="goBack()">arrow_back</span>
 
         <a id="alerts-button" class="desktop-elements nav-buttons" onclick="navigateToAlerts()">Alertas</a>
         <a id="refugios-button" class="desktop-elements nav-buttons" onclick="navigateToRefs()">Refugios</a>
 
-        <div class="" id="separatorLeft" style="flex: 1; align-items: flex-start; justify-content: flex-end; user-select: none">
-        </div>
+        <div class="" id="separatorLeft" style="flex: 1; align-items: flex-start; justify-content: flex-end; user-select: none"></div>
         <form id="search-form">
             <div id="search-input-container" style="width: 100%; height: 100%; max-width: 600px; flex-direction: row; display: flex; align-items: center; justify-content: center; background-color: white">
                 <input type="text" id="search-input" aria-label="Buscar" placeholder="Buscar en DogsHome…" maxlength="120" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" tabindex="3">
@@ -59,13 +54,22 @@
         </form>
         <div class="" id="userSpace" style="flex: 1; align-items: flex-start; justify-content: flex-end">
         </div>
-        <span class="material-icons-outlined" id="fav-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none" onclick="navigateToFav()">favorite_border</span>
+        <span class="material-icons-outlined" id="fav-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none" onmouseover="expandMenu()" onclick="expandMenu()">expand_more</span>
         <a class="desktop-elements nav-buttons" id="profile-name" style="margin-right: 0; padding-right: 10px" onclick="navigateToProfile">-</a>
-        <img class="desktop-elements" id="profile-pic" src="animations/image-loading.gif" alt="profile pic" style="height: 40px; width: 40px; cursor: pointer; margin-right: 10px; user-select: none; border-radius: 80px; object-fit: cover">
+        <img class="" id="profile-pic" src="animations/image-loading.gif" alt="profile pic" style="height: 40px; width: 40px; cursor: pointer; margin-right: 15px; user-select: none; border-radius: 80px; object-fit: cover">
 
     </div>
     <div id="all-container">
+
         <div id="post">
+            <div id="error-container" class="error-container-invisible">
+                <div id="header-container" style="height: 25%; width: 100%">
+                    <h1>La publicación no ha sido encontrada</h1>
+                </div>
+                <div id="footer-image" style="height: 75%; width: 100%; display: flex; align-items: flex-end; justify-content: center">
+                    <img src="images/dog-not-found.svg" id="image-dog-not-found" height="75%" style="object-fit: contain">
+                </div>
+            </div>
             <div style="flex-direction: row; display: flex; width: 100%; height: 100%">
                 <div id="post-images-selector">
                     <div class="secondary-image-cont-unselected" id="primary-image-cont-min" onclick="onSecondaryImageClick(this.id)">
@@ -76,7 +80,7 @@
                     <div id="post-image-container">
                         <img id="post-image" src="" alt>
                         <div id="image-count">
-                            <a id="image-count-number"></a>
+                            <a id="image-count-number" style="box-shadow: rgba(0, 0, 0, 0.5) 2px 30px 48px -25px;"></a>
                         </div>
                         <!--Creates the slider-->
                         <div class="slider-wrap" style="width: 100%; margin: 0; padding: 0; height: 100%">
