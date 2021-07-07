@@ -9,10 +9,14 @@
     width: 100%;
     height: 100%;
     background-color: white;
-    z-index: 100;
+    z-index: 10000;
     box-sizing: border-box;
     padding: 25px 0;
     padding-top: 0;
+}
+.selected{
+    color: #079292 !important;
+    fill: #079292 !important;
 }
 .expandible-menu-visible{
     display: flex;
@@ -24,7 +28,7 @@
     width: 100%;
     height: 100%;
     background-color: white;
-    z-index: 100;
+    z-index: 10000;
     box-sizing: border-box;
     padding: 25px 0;
     padding-top: 0;
