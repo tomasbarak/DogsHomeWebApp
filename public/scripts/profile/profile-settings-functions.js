@@ -4,6 +4,7 @@ function readUserData(userEmail){
     getData.on('value', (snapshot) => {
         const data = snapshot.val();
         //console.log(data);
+        console.log(data);
         localStorage.setItem("userDataName", data.Name);
         localStorage.setItem("userDataSurname", data.Surname);
         localStorage.setItem("userDataImage", data.Photo);
@@ -18,6 +19,7 @@ function useData(data){
 
 function setProfileImage(photo){
     document.getElementById("profile-pic").src = photo;
+    document.getElementById("profile-pic-exp-menu").src = photo;
 }
 
 function setProfileName(name, surname){
