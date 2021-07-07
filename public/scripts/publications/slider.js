@@ -45,6 +45,7 @@ if (navigator.msMaxTouchPoints) {
         },
 
         start: function(event) {
+
             // Test for flick.
             this.longTouch = false;
             setTimeout(function() {
@@ -59,6 +60,9 @@ if (navigator.msMaxTouchPoints) {
         },
 
         move: function(event) {
+
+            this.slideWidth = $('#slider').width();
+            //console.log(this.slideWidth);
             var sliderLength = document.getElementsByClassName("slide-wrapper").length - 1;
 
             // Continuously return touch position.
@@ -82,21 +86,17 @@ if (navigator.msMaxTouchPoints) {
             // Calculate the distance swiped.
             var absMove = Math.abs(this.index*this.slideWidth - this.movex);
             // Calculate the index. All other calculations are based on the index.
-            if (absMove > this.slideWidth/6) {
+            if (absMove > this.slideWidth/8) {
                 if (this.movex > this.index*this.slideWidth && this.index < sliderLength) {
                     this.index++;
-                    console.log("Siguiente xd" + sliderLength);
-
                     sliderCountElementText.innerText = (this.index + 1) + "/" + (sliderCountElementText.innerText).substring((sliderCountElementText.innerText).indexOf("/")+1, sliderCountElementText.innerText.length);
 
                 } else if (this.movex < this.index*this.slideWidth && this.index > 0) {
-                    console.log("sos un pelotudo <<");
                     this.index--;
                     sliderCountElementText.innerText = (this.index + 1) + "/" + (sliderCountElementText.innerText).substring((sliderCountElementText.innerText).indexOf("/")+1, sliderCountElementText.innerText.length);
 
                 }
             }
-            console.log(this.index);
             // Move and animate the elements.
             this.el.holder.addClass('animate').css('transform', 'translate3d(-' + this.index*this.slideWidth + 'px,0,0)');
             this.el.imgSlide.addClass('animate').css('transform', 'translate3d(-' + 100-this.index*50 + 'px,0,0)');

@@ -39,9 +39,9 @@
 <body onload="{getQuery(window.location.href); readUserData('barakcinthia@gmail.com')}">
 
     <div id="top-bar">
-        <div style="align-items: center; display: flex; width: 33.333%; flex-direction: row">
+        <div style="align-items: center; display: flex; width: 33.333%; flex-direction: row; padding-left: 10px; box-sizing: border-box;">
             <img src="images/DogsHomeLogo-ReDesign%20(White&Final).png" alt style="cursor: pointer; height: 50px; width: 50px; margin-left: 10px" class="desktop-elements" onclick="window.location = 'index.html'">
-            <span class="material-icons-outlined" id="menu-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none" onclick="goBack()">arrow_back</span>
+            <span class="material-icons-outlined" id="menu-button" style="color: #fff; cursor: pointer; margin-left: 10px; user-select: none" onclick="goBack()">arrow_back</span>
 
             <a id="alerts-button" class="desktop-elements nav-buttons" onclick="navigateToAlerts()">Alertas</a>
             <a id="refugios-button" class="desktop-elements nav-buttons" onclick="navigateToRefs()">Refugios</a>
@@ -54,11 +54,11 @@
                 </div>
             </form>
         </div>
-        <div style="display: flex; align-items: center; width: 33.333%; flex-direction: row">
+        <div style="display: flex; align-items: center; width: 33.333%; flex-direction: row; padding-left: 10px; box-sizing: border-box;">
             <div class="" id="userSpace" style="flex: 1; align-items: flex-start; justify-content: flex-end"></div>
-            <span class="material-icons-outlined" id="fav-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none" onmouseover="expandMenu()" onclick="expandMenu()">expand_more</span>
+            <span class="material-icons-outlined" id="fav-button" style="color: #fff; cursor: pointer; margin: 0 2px; user-select: none" onmouseover="expandMenu()" onclick="expandMenu()">expand_more</span>
             <a class="desktop-elements nav-buttons" id="profile-name" style="margin-right: 0; padding-right: 10px" onclick="navigateToProfile">-</a>
-            <img class="" id="profile-pic" src="animations/image-loading.gif" alt="profile pic" style="height: 40px; width: 40px; cursor: pointer; margin-right: 15px; user-select: none; border-radius: 80px; object-fit: cover">
+            <img class="" id="profile-pic" src="animations/image-loading.gif" alt="profile pic" style="height: 40px; width: 40px; cursor: pointer; margin-right: 10px; user-select: none; border-radius: 80px; object-fit: cover">
         </div>
     </div>
     <div id="all-container">
