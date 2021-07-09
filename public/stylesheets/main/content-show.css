@@ -27,14 +27,14 @@
 }
 .publication-photo{
     width: 100%;
-    height: auto;
-    max-height: 40%;
+    height: 50%;
+    max-height: 50%;
     object-fit: cover;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 .publication-desc-cont{
-    height: 30%;
+    height: 20%;
 }
 .publication-name{
     text-align: center;
