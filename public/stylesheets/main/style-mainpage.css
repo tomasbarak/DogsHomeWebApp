@@ -103,7 +103,14 @@ html, body {
     width: 40px;
     height: 40px;
 }
-
+#search-input-container{
+    min-width: 200px;
+}
+.top-bar-section-cont{
+    width: calc(100% / 3);
+    height: 100%;
+    display: flex;
+}
 @media screen and (max-width: 1023px){
     #search-input, #search-input-container, #search-form{
         max-width: 400px;
@@ -121,6 +128,12 @@ html, body {
     .desktop-elements{
         display: none;
     }
+}
+@media screen and (max-width: 645px){
+   .top-bar-section-cont{
+       width: auto;
+       flex: 1;
+   }
 }
 
 @media screen and (max-width: 480px){
