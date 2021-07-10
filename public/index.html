@@ -48,7 +48,7 @@
             <img src="images/DogsHomeLogo-ReDesign%20(White&Final).png" alt style="height: 50px; width: 50px; margin-right: 10px" class="">
 
             <a id="alerts-button" class="desktop-elements nav-buttons" onclick="navigateToAlerts()">Alertas</a>
-            <a id="refugios-button" class="desktop-elements nav-buttons" onclick="navigateToRefs()">Refugios</a>
+           <!-- <a id="refugios-button" class="desktop-elements nav-buttons" onclick="navigateToRefs()">Refugios</a>-->
         </div>
         <div class="top-bar-section-cont">
             <form id="search-form">
@@ -61,7 +61,7 @@
         <div class="top-bar-section-cont" id="userSpace" style="flex: 1; align-items: center; justify-content: flex-end;">
             <span class="material-icons-outlined" id="fav-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none;" onclick="expandMenu()">menu</span>
             <a class="desktop-elements nav-buttons" id="profile-name" style="margin-right: 0; padding-right: 10px" onclick="navigateToProfile()"></a>
-            <img class="desktop-elements" id="profile-pic" src="animations/image-loading.gif" alt="profile pic" style="height: 40px; width: 40px; cursor: pointer; margin-right: 10px; user-select: none; border-radius: 80px; object-fit: cover">
+            <img class="desktop-elements" id="profile-pic" onclick="navigateToProfile(localStorage.getItem('userDataId'))" src="animations/image-loading.gif" alt="profile pic" style="height: 40px; width: 40px; cursor: pointer; margin-right: 10px; user-select: none; border-radius: 80px; object-fit: cover">
         </div>
     </div>
     <div class="expandible-menu-invisible" id="expandible-menu">
@@ -89,7 +89,7 @@
                 </a>
             </li>
             <li>
-                <a href="perfil.html">
+                <a href="mi-cuenta.html">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="24" height="24"><path fill-rule="evenodd" d="M12 2.5a5.5 5.5 0 00-3.096 10.047 9.005 9.005 0 00-5.9 8.18.75.75 0 001.5.045 7.5 7.5 0 0114.993 0 .75.75 0 101.499-.044 9.005 9.005 0 00-5.9-8.181A5.5 5.5 0 0012 2.5zM8 8a4 4 0 118 0 4 4 0 01-8 0z"></path></svg>
                     <span>Mi perfil</span>
                 </a>

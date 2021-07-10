@@ -4,6 +4,6 @@ function navigateToAlerts(){
 function navigateToFavs(){
     window.location = "favoritos.html";
 }
-function navigateToProfile(){
-    window.location = "perfil.html";
+function navigateToProfile(profileId){
+    window.location = "mi-cuenta.html?perfil=" + profileId;
 }

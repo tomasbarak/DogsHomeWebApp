@@ -6,6 +6,9 @@ function getPublication(id){
             console.log(data);
             document.getElementById("post-image").src = data.Photo;
             document.getElementById("primary-image-min").src = data.Photo;
+            document.querySelector('meta[property="og:title"]').setAttribute("content", data.Name);
+            document.querySelector('meta[property="og:image"]').setAttribute("content", data.Photo);
+            $('meta[property=og\\:image]').attr('content', 'http://myweb.com/image.jpg');
             document.getElementById("post-image").alt = data.Name;
             document.getElementById("post-name").innerText = data.Name;
             document.getElementById("post-desc").innerText = data.SDescription;

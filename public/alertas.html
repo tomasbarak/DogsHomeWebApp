@@ -45,22 +45,21 @@
 </head>
 <body onload="{requestLatitude(); readUserData(localStorage.getItem('userDataMail'))}">
 <div id="search-bar">
-    <div style="width: calc(100% / 3); height: 100%; display: flex; flex-direction: row; align-items: center;">
-        <img src="images/DogsHomeLogo-ReDesign%20(White&Final).png" alt style="height: 50px; width: 50px" class="">
+    <div class="top-bar-section-cont" style="flex-direction: row; align-items: center;">
+        <img src="images/DogsHomeLogo-ReDesign%20(White&Final).png" alt style="height: 50px; width: 50px; margin-right: 10px" class="">
 
-        <a id="inicio-button" class="desktop-elements nav-buttons" onclick="window.location = 'index.html'">Inicio</a>
-        <a id="refugios-button" class="desktop-elements nav-buttons" onclick="navigateToRefs()">Refugios</a>
+        <a id="main-button" class="desktop-elements nav-buttons" onclick="window.location = 'index.html'">Inicio</a>
+        <!--<a id="alerts-button" class="desktop-elements nav-buttons" onclick="navigateToAlerts()">Alertas</a>-->
     </div>
-    <div style="width: calc(100% / 3); height: 100%;">
+    <div class="top-bar-section-cont">
         <form id="search-form">
             <div id="search-input-container" style="width: 100%; height: 100%; max-width: 600px; flex-direction: row; display: flex; align-items: center; justify-content: center; background-color: white">
-                <input type="text" id="search-input" aria-label="Buscar" placeholder="Buscar alerta por nombre…" maxlength="120" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" tabindex="3">
+                <input type="text" id="search-input" aria-label="Buscar" placeholder="Buscar en DogsHome…" maxlength="120" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" tabindex="3">
                 <span class="material-icons-outlined" style="color: #d3d3d3; cursor: pointer; user-select: none" onclick="searchPost()">search</span>
             </div>
         </form>
     </div>
-    <div style="width: calc(100% / 3); height: 100%; display: flex; flex-direction: row; align-items: center">
-        <div class="" id="userSpace" style="flex: 1; align-items: flex-start; justify-content: flex-end"></div>
+    <div class="top-bar-section-cont" id="userSpace" style="flex: 1; align-items: center; justify-content: flex-end;">
         <span class="material-icons-outlined" id="fav-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none;" onclick="expandMenu()">menu</span>
         <a class="desktop-elements nav-buttons" id="profile-name" style="margin-right: 0; padding-right: 10px" onclick="navigateToProfile()"></a>
         <img class="desktop-elements" id="profile-pic" src="animations/image-loading.gif" alt="profile pic" style="height: 40px; width: 40px; cursor: pointer; margin-right: 10px; user-select: none; border-radius: 80px; object-fit: cover">
@@ -91,7 +90,7 @@
             </a>
         </li>
         <li>
-            <a href="perfil.html">
+            <a href="mi-cuenta.html">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="24" height="24"><path fill-rule="evenodd" d="M12 2.5a5.5 5.5 0 00-3.096 10.047 9.005 9.005 0 00-5.9 8.18.75.75 0 001.5.045 7.5 7.5 0 0114.993 0 .75.75 0 101.499-.044 9.005 9.005 0 00-5.9-8.181A5.5 5.5 0 0012 2.5zM8 8a4 4 0 118 0 4 4 0 01-8 0z"></path></svg>
                 <span>Mi perfil</span>
             </a>
