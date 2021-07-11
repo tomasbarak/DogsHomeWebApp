@@ -20,6 +20,7 @@ function useData(data){
 function setProfileImage(photo){
     document.getElementById("profile-pic").src = photo;
     document.getElementById("profile-pic-exp-menu").src = photo;
+    document.getElementById("profile-image-mobile").src = photo;
 
 }
 

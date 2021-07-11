@@ -54,22 +54,66 @@ html, body {
     margin-top: 15px;
     border-radius: 25px;
 }
-#profile-image-cont-mobile{
+#profile-view-cont-mobile{
     width: 100%;
-    height: 50%;
+    height: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
 }
-#profile-view-image-mobile{
+#profile-stats-cont-mobile{
+    background-color: #e6e6e6;
+    height: 300px;
     width: 100%;
-    object-fit: contain;
-    height: fit-content;
+    border-radius: 15px;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+#profile-image-mobile{
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+#first-stats-part-cont-mobile{
+    width: 100%;
+    height: 100px;
+    border-radius: 15px;
+    background-color: #ECEFF1;
+    display: flex;
+    flex-direction: row;
+}
+#account-stats-cont-mobile{
+    width: calc(100% - 100px);
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
 }
 .mobile{
-    display: none;
+    display: none !important;
 }
 .desktop{
-    display: flex;
+    display: flex !important;
 }
 .stats-content{
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+}
+.stats-content-mobile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100px;
+    height: 100%;
     text-align: center;
     font-family: 'Prompt', sans-serif;
 }
