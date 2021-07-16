@@ -20,11 +20,11 @@
     <script src="scripts/profile/get-account-stats.js"></script>
     <link href="stylesheets/main/content-show.css" rel="stylesheet">
     <link href="stylesheets/main/drawer-navigator-style.css" rel="stylesheet">
-
-    <title></title>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" id="theme-styles">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="scripts/alerts/page-alerts.js"></script>
 </head>
 <body onload="{readUserData(localStorage.getItem('userDataMail'));}">
 
@@ -52,7 +52,7 @@
     <div class="top-bar-section-cont" id="userSpace" style="flex: 1; align-items: center; justify-content: flex-end;">
         <span class="material-icons-outlined" id="fav-button" style="color: #fff; cursor: pointer; margin: 0 10px; user-select: none;" onclick="expandMenu()">menu</span>
         <a class="desktop-elements nav-buttons" id="profile-name" style="margin-right: 0; padding-right: 10px" onclick="navigateToProfile()"></a>
-        <img class="desktop-elements" id="profile-pic" onclick="navigateToProfile(localStorage.getItem('userDataId'))" src="animations/image-loading.gif" alt="profile pic" style="height: 40px; width: 40px; cursor: pointer; margin-right: 10px; user-select: none; border-radius: 80px; object-fit: cover">
+        <img class="desktop-elements" id="profile-pic" onclick="" src="animations/image-loading.gif" alt="profile pic" style="height: 40px; width: 40px; cursor: pointer; margin-right: 10px; user-select: none; border-radius: 80px; object-fit: cover">
     </div>
 </div>
 <div class="expandible-menu-invisible" id="expandible-menu">
@@ -101,7 +101,7 @@
             </a>
         </li>
         <li>
-            <a onclick="signOut()" style="cursor: pointer">
+            <a onclick="showSignOutAlert()" style="cursor: pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ff0000" width="24" height="24">
                     <path fill-rule="evenodd"
                           d="M3 3.25c0-.966.784-1.75 1.75-1.75h5.5a.75.75 0 010 1.5h-5.5a.25.25 0 00-.25.25v17.5c0 .138.112.25.25.25h5.5a.75.75 0 010 1.5h-5.5A1.75 1.75 0 013 20.75V3.25zm16.006 9.5l-3.3 3.484a.75.75 0 001.088 1.032l4.5-4.75a.75.75 0 000-1.032l-4.5-4.75a.75.75 0 00-1.088 1.032l3.3 3.484H10.75a.75.75 0 000 1.5h8.256z"></path>
@@ -134,7 +134,7 @@
             <div style="width: 200px; display: flex; align-items: center; justify-content: center"></div>
             <div style="width: calc(50% - 100px); height: 100%; display: flex; align-items: center; justify-content: center">
                 <div class="profile-action-button">
-                    <a onclick="signOut()">Cerrar sesión</a>
+                    <a onclick="showSignOutAlert()">Cerrar sesión</a>
                 </div>
             </div>
         </div>
