@@ -6,7 +6,6 @@ html, body {
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
 }
 
 #loading-visible{
@@ -68,6 +67,7 @@ html, body {
 }
 #search-input{
     box-shadow: none;
+
 }
 #search-input:focus{
     outline: none;
@@ -75,6 +75,7 @@ html, body {
 #search-input::placeholder{
     color: #d3d3d3;
     user-select: none;
+    font-family: 'Roboto', sans-serif;
 }
 #menu-button, #fav-button{
     display: none;
@@ -93,6 +94,7 @@ html, body {
     transition: 0.15s;
     padding: 0 10px;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 .nav-buttons:hover{
     transition: 0.15s;

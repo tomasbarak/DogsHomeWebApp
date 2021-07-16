@@ -38,11 +38,14 @@
 }
 .publication-name{
     text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
 }
 .publication-description{
     font-size: 8pt;
     box-sizing: border-box;
     padding: 10px;
+    font-family: 'Lato', sans-serif;
 }
 .ref-name-cont{
     display: flex;
@@ -51,8 +54,10 @@
     justify-content: flex-end;
     box-sizing: border-box;
     padding: 8px;
-    font-size: 8pt;
+    font-size: 12px;
+    font-weight: lighter;
     color: #079292;
+    font-family: Lato, sans-serif;
 }
 
 @media screen and (min-width: 1300px){

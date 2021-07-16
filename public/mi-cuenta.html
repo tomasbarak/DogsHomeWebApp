@@ -9,6 +9,8 @@
     <script src="scripts/main/basic-navigation.js"></script>
     <script src="scripts/auth/sign-out.js"></script>
     <script src="scripts/auth/auth-state-listener.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="stylesheets/main/style-mainpage.css" rel="stylesheet">
     <link href="stylesheets/profile/profile-def-view.css" rel="stylesheet">
     <link href="stylesheets/publications/expandible-menu.css" rel="stylesheet">
@@ -20,8 +22,16 @@
     <link href="stylesheets/main/drawer-navigator-style.css" rel="stylesheet">
 
     <title></title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body onload="{readUserData(localStorage.getItem('userDataMail'));}">
+
+<script src="scripts/main/loading-display.js"></script>
+<div id="loading-visible">
+    <lottie-player src="animations/dog-walking.json" background="transparent"  speed="1"  style="width: 200px; height: 200px;" loop autoplay></lottie-player>
+</div>
 
 <div id="search-bar">
     <div class="top-bar-section-cont" style="flex-direction: row; align-items: center;">
@@ -124,7 +134,7 @@
             <div style="width: 200px; display: flex; align-items: center; justify-content: center"></div>
             <div style="width: calc(50% - 100px); height: 100%; display: flex; align-items: center; justify-content: center">
                 <div class="profile-action-button">
-                    <a>Seguir</a>
+                    <a onclick="signOut()">Cerrar sesión</a>
                 </div>
             </div>
         </div>

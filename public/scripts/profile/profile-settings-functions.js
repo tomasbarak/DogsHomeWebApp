@@ -27,4 +27,6 @@ function setProfileImage(photo){
 function setProfileName(name, surname){
     //document.getElementById("profile-name").innerText = name + ' ' + surname;
     document.getElementById("exp-menu-name").innerText = name + ' ' + surname;
+
+    setLoading(false);
 }
