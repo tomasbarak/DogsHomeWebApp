@@ -2,6 +2,8 @@ var actualInstance;
 
 function setInicialInstance(){
     actualInstance = 0;
+    refreshInstances();
+
 }
 
 function submitInstance(){
@@ -12,28 +14,28 @@ function submitInstance(){
             signUp(document.getElementById('mail').value, document.getElementById('password').value, document.getElementById('password-repeat').value);
             break;
         //Nombre y apellido
-        case 2:
+        case 1:
             break;
         //Tipo de cuenta
-        case 3:
+        case 2:
             break;
         //Nombre del refugio
-        case 4:
+        case 3:
             break;
         //Foto de perfil
-        case 5:
+        case 4:
             break;
         //Telefono(s)
-        case 6:
+        case 5:
             break;
         //Descripcion corta
-        case 7:
+        case 6:
             break;
         //Descripcion larga
-        case 8:
+        case 7:
             break;
         //Sitio web
-        case 9:
+        case 8:
             break;
         //Redes sociales
         case 9:
@@ -42,5 +44,6 @@ function submitInstance(){
         case 10:
             break;
     }
+    refreshInstances();
     actualInstance ++;
 }

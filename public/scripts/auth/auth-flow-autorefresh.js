@@ -1,50 +1,57 @@
-var emailAndPasswordContainer = document.getElementById('email-and-password');
-
-
-switch (actualInstance){
-        //email y contraseña
-    case 0:
-        setInstanceVisibility('email-and-password');
-        break;
+function refreshInstances(){
+    switch (actualInstance){
+        case undefined:
+            setInstanceVisibility('email-and-password');
+            break;
+        case 0:
+            setInstanceVisibility('email-and-password');
+            break;
         //Nombre y apellido
-    case 2:
-        break;
+        case 1:
+            setInstanceVisibility('name-and-surname');
+            break;
         //Tipo de cuenta
-    case 3:
-        break;
+        case 2:
+            break;
         //Nombre del refugio
-    case 4:
-        break;
+        case 3:
+            break;
         //Foto de perfil
-    case 5:
-        break;
+        case 4:
+            break;
         //Telefono(s)
-    case 6:
-        break;
+        case 5:
+            break;
         //Descripcion corta
-    case 7:
-        break;
+        case 6:
+            break;
         //Descripcion larga
-    case 8:
-        break;
+        case 7:
+            break;
         //Sitio web
-    case 9:
-        break;
+        case 8:
+            break;
         //Redes sociales
-    case 9:
-        break;
+        case 9:
+            break;
         //Terminos y condiciones
-    case 10:
-        break;
+        case 10:
+            break;
+    }
 }
 
 function setInstanceVisibility(instanceIdName){
-    var allInstances = document.getElementsByClassName('signup-instance')
+    var allInstances = document.getElementsByClassName('signup-instance');
     for(let key in allInstances){
-        if(allInstances[key].id === instanceIdName){
-            allInstances[key].id.style.display = 'flex';
-        }else{
-            allInstances[key].id.style.display = 'none';
+        console.log(allInstances[key].id);
+        if(allInstances[key].id !== undefined){
+            if(allInstances[key].id === instanceIdName){
+                //console.log(allInstances[key]);
+                allInstances[key].style.display = 'flex';
+            }else{
+                //console.log(allInstances[key]);
+                allInstances[key].style.display = 'none';
+            }
         }
     }
 }

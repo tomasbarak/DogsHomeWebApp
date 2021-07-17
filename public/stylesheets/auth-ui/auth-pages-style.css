@@ -48,12 +48,13 @@ html, body {
 input{
     height: 50px;
     width: 100vw;
-    max-width: 350px;
+    max-width: 320px;
     border-width: 0;
     border-bottom-width: 1px;
     border-color: #d3d3d3;
     transition: 0.25s;
 }
+
 textarea:focus, input:focus{
     transition: 0.25s;
     outline: none;
