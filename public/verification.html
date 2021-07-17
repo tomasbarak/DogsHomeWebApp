@@ -19,7 +19,7 @@
 <a style="font-family: 'Lato', sans-serif; font-size: 3em; margin-top: calc(100vh/4); font-weight: 600; color: #595959">Verificación</a>
 <img src="images/email-verification.svg" alt style="height: calc(100vh / 4); margin-top: 50px">
 <a id="EmailSentTo" style="font-family: 'Prompt', sans-serif; font-size: 1em; margin-top: 50px"></a>
-<a style="width: 100px; height: 50px; border-radius: 8px; margin-top: 50px; cursor: pointer; background-color: #079292; color: white; font-family: 'Lato', sans-serif; display: flex; align-items: center; justify-content: center">Continuar</a>
+<a onclick="window.location.href=window.location.href" style="width: 100px; height: 50px; border-radius: 8px; margin-top: 50px; cursor: pointer; background-color: #079292; color: white; font-family: 'Lato', sans-serif; display: flex; align-items: center; justify-content: center">Continuar</a>
 
 <script src="https://dogshome.softvisiondevelop.com.ar/__/firebase/8.6.5/firebase-app.js"></script>
 
@@ -37,7 +37,7 @@
             if(user.emailVerified === false){
                 sendEmailVerification(user)
             }else{
-                if(localStorage.get)
+                if(true)
                 window.location = "index.html";
             }
         } else {
