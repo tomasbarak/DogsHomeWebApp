@@ -9,6 +9,7 @@ function submitInstance(){
     switch (actualInstance){
         //email y contraseña
         case 0:
+            signUp(document.getElementById('mail').value, document.getElementById('password').value, document.getElementById('password-repeat').value);
             break;
         //Nombre y apellido
         case 2:
@@ -41,4 +42,5 @@ function submitInstance(){
         case 10:
             break;
     }
+    actualInstance ++;
 }

@@ -1,10 +1,6 @@
 function enter(email, password, repeatPassword){
     if(event.key === 'Enter') {
-        if(password === repeatPassword){
-            signUp(email, password);
-        }else{
-
-        }
+        submitInstance()
     }
 }
 
@@ -18,7 +14,7 @@ function throwEmailExistsError(){
     )
 }
 
-function signUp(email, password){
+function signUp(email, password, repeatPassword){
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed in
@@ -36,8 +32,4 @@ function signUp(email, password){
                 throwEmailExistsError();
             }
         });
-}
-
-function confirmIfMailExists(email){
-
 }

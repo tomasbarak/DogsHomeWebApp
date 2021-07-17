@@ -28,7 +28,7 @@
         <div style="height: 25%; width: 100%; display: flex; align-items: center; justify-content: center">
             <a id="sign-in-title">DogsHome</a>
         </div>
-        <div id="email-and-password" style="display: flex; flex-direction: column; align-items: flex-end">
+        <div id="email-and-password" class="signup-instance" style="display: flex; flex-direction: column; align-items: flex-end">
             <div class="input-container">
                 <label for="mail" style="margin-bottom: 15px; font-size: 12pt">E-mail: </label>
                 <input placeholder="E-mail" id="mail" type="email" pattern="([A-Za-z0-9][._]?)+[A-Za-z0-9]@[A-Za-z0-9]+(\.?[A-Za-z0-9]){2}\.(com?|net|org)+(\.[A-Za-z0-9]{2,4})?">
@@ -43,9 +43,17 @@
                 <label for="password" style="margin-bottom: 15px; font-size: 12pt">Repetir contraseña: </label>
                 <input placeholder="Repetir contraseña" id="password-repeat" type="password" onkeypress="enter(document.getElementById('mail').value, document.getElementById('password').value, document.getElementById('password-repeat').value)">
             </div>
-            <a href="#" id="sign-in-btn" onclick="submitInstance()">Siguiente</a>
-            <a href="signin.html" style="font-family: 'Lato', sans-serif; font-size: 12px; width: 100%; text-align: center; margin-top: 15px">¿Ya tenes cuenta? Iniciá sesión</a>
         </div>
+        <div class="signup-instance">
+            <div class="input-container">
+                <label for="name" style="margin-bottom: 15px; font-size: 12pt">Nombre: </label>
+                <input placeholder="Nombre" id="name" type="password" onkeypress="enter()">
+            </div>
+        </div>
+        <div style="width: 100%; display: flex; flex-direction: row; justify-content: flex-end">
+            <a href="#" id="sign-in-btn" onclick="submitInstance()">Siguiente</a>
+        </div>
+        <a href="signin.html" style="font-family: 'Lato', sans-serif; font-size: 12px; width: 100%; text-align: center; margin-top: 15px">¿Ya tenes cuenta? Iniciá sesión</a>
     </div>
 </section>
 

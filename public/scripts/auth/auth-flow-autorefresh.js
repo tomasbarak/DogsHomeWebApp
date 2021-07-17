@@ -4,7 +4,7 @@ var emailAndPasswordContainer = document.getElementById('email-and-password');
 switch (actualInstance){
         //email y contraseña
     case 0:
-
+        setInstanceVisibility('email-and-password');
         break;
         //Nombre y apellido
     case 2:
@@ -39,5 +39,12 @@ switch (actualInstance){
 }
 
 function setInstanceVisibility(instanceIdName){
-    emailAndPasswordContainer.style.display = flex;
+    var allInstances = document.getElementsByClassName('signup-instance')
+    for(let key in allInstances){
+        if(allInstances[key].id === instanceIdName){
+            allInstances[key].id.style.display = 'flex';
+        }else{
+            allInstances[key].id.style.display = 'none';
+        }
+    }
 }

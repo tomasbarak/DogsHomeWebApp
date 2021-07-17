@@ -20,6 +20,7 @@ html, body {
     align-items: center;
     justify-content: center;
     padding: 0;
+    flex-direction: column;
     box-sizing: border-box;
 }
 #form{
@@ -41,7 +42,8 @@ html, body {
     align-items: flex-start;
     flex-direction: column;
     font-size: 10pt;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
+    margin-top: 10px;
 }
 input{
     height: 50px;
