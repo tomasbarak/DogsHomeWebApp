@@ -22,9 +22,10 @@
     <link href="stylesheets/main/drawer-navigator-style.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" id="theme-styles">
+    <script src="scripts/alerts/page-alerts.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="scripts/alerts/page-alerts.js"></script>
+
 </head>
 <body onload="{readUserData(localStorage.getItem('userDataMail'));}">
 
@@ -133,8 +134,8 @@
             </div>
             <div style="width: 200px; display: flex; align-items: center; justify-content: center"></div>
             <div style="width: calc(50% - 100px); height: 100%; display: flex; align-items: center; justify-content: center">
-                <div class="profile-action-button">
-                    <a onclick="showSignOutAlert()">Cerrar sesión</a>
+                <div onclick="showSignOutAlert()" class="profile-action-button">
+                    <a>Cerrar sesión</a>
                 </div>
             </div>
         </div>
