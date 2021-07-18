@@ -24,27 +24,10 @@ html, body {
     box-sizing: border-box;
     z-index: 103;
 }
-li{
-    list-style: none;
-}
-.account-type-option{
-    display: flex;
-    flex-direction: column;
-    height: 90px;
-    width: 90px;
-    background-color: #f1f1f1;
-    border-radius: 8px;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 8px;
-}
 
 #form{
     height: 85%;
-    width: 35%;
+    width: fit-content;
     max-width: 600px;
     max-height: 1200px;
     background-color: rgba(255, 255, 255, 0);
@@ -66,8 +49,7 @@ li{
 }
 input{
     height: 50px;
-    width: 100vw;
-    max-width: 320px;
+    width: 25vw;
     border-width: 0;
     border-bottom-width: 1px;
     border-color: #d3d3d3;
@@ -98,4 +80,16 @@ textarea:focus, input:focus{
     font-family: libel-suit-rg, sans-serif;
     font-size: 3em;
     color: #d3d3d3;
+}
+@media screen and (max-width: 1024px){
+    input{
+        height: 50px;
+        width: 50vw;
+    }
+}
+@media screen and (max-width: 480px){
+    input{
+        height: 50px;
+        width: 75vw;
+    }
 }
