@@ -18,30 +18,57 @@
     <script src="scripts/auth/create-account-flow.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" id="theme-styles">
-    <link rel="stylesheet" href="stylesheets/auth-ui/stength-pass-show.css">
 </head>
-<body onload="setInicialInstance()">
+<body onload="setInicialInstance(1)">
 <!-- <svg style="position: absolute; z-index: -1; top: 0; left: 0" xmlns="http://www.w3.org/2000/svg" width="100vw" height="300px" viewBox="0 0 1440.000000 700.000000" preserveAspectRatio="xMidYMid slice" id="svg"> <g transform="translate(0.000000,700.000000) scale(0.100000,-0.100000)" fill="#079292" stroke="none"><path d="M0 5251 l0 -1749 72 -29 c40 -17 231 -97 423 -178 835 -351 1392 -546 1863 -650 533 -117 905 -114 1322 12 136 41 259 90 533 214 438 199 568 251 714 288 222 57 401 76 578 61 307 -25 484 -70 1200 -310 703 -236 999 -314 1349 -356 181 -22 482 -19 636 5 502 79 852 225 1790 746 605 336 842 454 1107 550 325 118 698 171 1041 147 460 -32 855 -138 1602 -431 85 -33 158 -61 163 -61 4 0 7 785 7 1745 l0 1745 -7200 0 -7200 0 0 -1749z"/> </g></svg>-->
-<section id="sign-in">
+<section id="sign-in" style="flex-direction: row">
+    <div id="left" style="width: 32.5%; height: 100%">
+
+    </div>
     <div id="form">
         <div style="height: 25%; width: 100%; display: flex; align-items: center; justify-content: center">
-            <a style="font-family: 'Lato', sans-serif; font-size: 3em; color: #595959;">DogsHome</a>
+            <img src="images/DogsHomeLogo-ReDesign%20(Colorified&Final).png" alt height="75px" width="75px">
         </div>
 
-        <div id="name-and-surname" class="signup-instance">
+        <div id="name-and-surname" class="signup-instance" style="display: flex; flex-direction: column">
             <div class="input-container">
                 <label for="name" style="margin-bottom: 15px; font-size: 12pt">Nombre: </label>
-                <input placeholder="Nombre" id="name" type="password" onkeypress="enter()">
+                <input placeholder="Nombre" id="name" type="text" onkeypress="enter()">
             </div>
             <div class="input-container">
-                <label for="name" style="margin-bottom: 15px; font-size: 12pt">Apellido: </label>
-                <input placeholder="Apellido" id="surname" type="password" onkeypress="enter()">
+                <label for="surname" style="margin-bottom: 15px; font-size: 12pt">Apellido: </label>
+                <input placeholder="Apellido" id="surname" autocomplete="off" type="text" onkeypress="enter()">
             </div>
         </div>
-        <div style="width: 100vw; max-width: 320px; display: flex; flex-direction: row; justify-content: flex-end">
+        <div id="account-type" class="signup-instance" style="display: flex; flex-direction: column">
+            <div style="margin-bottom: 75px; width: 100%; height: 100px; display: flex; flex-direction: row; align-items: center; justify-content: center;">
+                <div style="display: flex; flex-direction: column">
+                    <div id="adoptante" class="account-type-option" style="margin-left: 15px">
+                        <img src="images/adoptant.svg" alt width="100%" height="100%">
+                    </div>
+                    <a style="margin-left: 15px; font-family: 'Lato', sans-serif; font-size: 12px; color: #222222; width: calc(100% - 15px); margin-top: 8px; text-align: center">Adoptante</a>
+                </div>
+                <div style="display: flex; flex-direction: column">
+                    <div id="refugio" class="account-type-option" style="margin: 0 15px">
+                        <img src="images/shelter.svg" alt width="100%" height="100%">
+                    </div>
+                    <a style="margin-right: 15px; font-family: 'Lato', sans-serif; font-size: 12px; color: #222222; width: calc(100% - 0px); margin-top: 8px; text-align: center">Refugio</a>
+                </div>
+                <div style="display: flex; flex-direction: column">
+                    <div id="rescatista-solo" class="account-type-option">
+                        <img src="images/single-shelter.svg" alt width="100%" height="100%">
+                    </div>
+                    <a style="margin-right: 15px; font-family: 'Lato', sans-serif; font-size: 12px; color: #222222; width: calc(100% - 0px); margin-top: 8px; text-align: center">Rescatista</a>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100vw; max-width: 320px; display: flex; flex-direction: row; justify-content: flex-end; align-items: center">
+            <svg style="margin-bottom: 8px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24"><path fill-rule="evenodd" d="M9.78 12.78a.75.75 0 01-1.06 0L4.47 8.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L6.06 8l3.72 3.72a.75.75 0 010 1.06z"></path></svg>
             <a href="#" id="sign-in-btn" onclick="submitInstance()">Siguiente</a>
         </div>
-        <a href="signin.html" style="font-family: 'Lato', sans-serif; font-size: 12px; width: 100%; text-align: center; margin-top: 15px">¿Ya tenes cuenta? Iniciá sesión</a>
+    </div>
+    <div id="right" style="width: 32.5%;z-index: -1; height: 100%">
+
     </div>
 </section>
 
@@ -66,7 +93,7 @@
             var location = window.location.href;
 
             if(location.includes("localhost")){
-                window.location.href = "index.html";
+                //window.location.href = "index.html";
             }else{
                 window.location.href = "/";
             }
@@ -74,12 +101,11 @@
             var uid = user.uid;
             // ...
         } else {
-
+            window.location = 'signin.html';
             // ...
         }
     });
 </script>
-<script src="scripts/auth/password-strength-checker.js"></script>
 <script src="scripts/auth/auth-flow-autorefresh.js"></script>
 </body>
 </html>

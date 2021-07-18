@@ -12,6 +12,7 @@ function refreshInstances(){
             break;
         //Tipo de cuenta
         case 2:
+            setInstanceVisibility('account-type');
             break;
         //Nombre del refugio
         case 3:
@@ -43,13 +44,13 @@ function refreshInstances(){
 function setInstanceVisibility(instanceIdName){
     var allInstances = document.getElementsByClassName('signup-instance');
     for(let key in allInstances){
-        console.log(allInstances[key].id);
+        //console.log(allInstances[key].id);
         if(allInstances[key].id !== undefined){
             if(allInstances[key].id === instanceIdName){
-                //console.log(allInstances[key]);
+                console.log(allInstances[key]);
                 allInstances[key].style.display = 'flex';
             }else{
-                //console.log(allInstances[key]);
+                console.log(allInstances[key]);
                 allInstances[key].style.display = 'none';
             }
         }

@@ -1,7 +1,11 @@
 var actualInstance;
 
-function setInicialInstance(){
-    actualInstance = 0;
+function setInicialInstance(inicialNumber){
+    if(inicialNumber !== null || inicialNumber !== undefined){
+        actualInstance = inicialNumber;
+    }else{
+        actualInstance = 0;
+    }
     refreshInstances();
 
 }
@@ -44,6 +48,6 @@ function submitInstance(){
         case 10:
             break;
     }
-    refreshInstances();
     actualInstance ++;
+    refreshInstances();
 }

@@ -22,7 +22,26 @@ html, body {
     padding: 0;
     flex-direction: column;
     box-sizing: border-box;
+    z-index: 103;
 }
+li{
+    list-style: none;
+}
+.account-type-option{
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+    width: 90px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
 #form{
     height: 85%;
     width: 35%;

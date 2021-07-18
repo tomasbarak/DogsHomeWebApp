@@ -4,11 +4,16 @@ function readUserData(userEmail){
     getData.on('value', (snapshot) => {
         const data = snapshot.val();
         //console.log(data);
-        console.log(data);
-        localStorage.setItem("userDataName", data.Name);
-        localStorage.setItem("userDataSurname", data.Surname);
-        localStorage.setItem("userDataImage", data.Photo);
-        useData(data);
+        if(data !== null){
+            console.log(data);
+            localStorage.setItem("userDataName", data.Name);
+            localStorage.setItem("userDataSurname", data.Surname);
+            localStorage.setItem("userDataImage", data.Photo);
+            useData(data);
+        }else{
+            window.location = 'crear-perfil.html';
+        }
+
     });
 }
 
