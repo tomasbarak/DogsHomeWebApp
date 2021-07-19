@@ -1,7 +1,10 @@
 html, body {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 * {
@@ -40,6 +43,7 @@ li{
 }
 #account-type{
     display: flex;
+    height: auto;
     align-items: center;
     justify-content: center;
     flex-direction: row;
@@ -50,9 +54,9 @@ li{
     transform: scale(1.01);
 }
 #account-types-container{
-    margin-bottom: 75px;
+    margin-bottom: 8px;
     width: 100%;
-    height: 100px;
+    height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -77,5 +81,9 @@ li{
     }
     #acc-type-cont1{
         margin-left: 0;
+    }
+    .account-type-option{
+        width: 100px;
+        height: 100px;
     }
 }
