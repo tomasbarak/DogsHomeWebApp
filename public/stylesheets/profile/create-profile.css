@@ -1,6 +1,7 @@
 html, body {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 * {
@@ -11,6 +12,7 @@ li{
     list-style: none;
 }
 .account-type-option{
+    transition: 0.5s;
     display: flex;
     flex-direction: column;
     width: 150px;
@@ -22,7 +24,14 @@ li{
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0);
     padding: 8px;
+}
+.acc-type-selected{
+    border: 1px solid #079292;
+}
+.acc-type-unselected{
+    border: 1px solid rgba(0, 0, 0, 0);
 }
 .account-type-option-container{
     width: auto;
@@ -35,11 +44,38 @@ li{
     justify-content: center;
     flex-direction: row;
 }
-@media screen and (max-width: 1024px){
-    #account-type{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+.account-type-option:hover{
+    transition: 0.5s;
+    border: 1px solid #079292;
+    transform: scale(1.01);
+}
+#account-types-container{
+    margin-bottom: 75px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#acc-type-lbl1{
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    color: #222222;
+    width: calc(100%);
+    margin-top: 8px;
+    text-align: center;
+}
+#acc-type-cont1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+@media screen and (max-width: 480px){
+    #account-types-container{
         flex-direction: column;
+    }
+    #acc-type-cont1{
+        margin-left: 0;
     }
 }
